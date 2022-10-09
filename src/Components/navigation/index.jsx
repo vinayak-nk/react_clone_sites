@@ -10,6 +10,17 @@ const Navigation = () => {
         <div className="navbar-links_logo">
           <img src={logo} alt="Logo" />
         </div>
+        <div className="navbar-links__container">
+          <p><a href="#home">Home</a></p>
+          <p><a href="#wgpt3">What is GPT?</a></p>
+          <p><a href="#possibility">Open AI</a></p>
+          <p><a href="#features">Case Studies</a></p>
+          <p><a href="#blog">Library</a></p>
+        </div>
+        <div className="navbar-sign">
+          <p>Sign in</p>
+          <button type="button">Sign up</button>
+        </div>
       </div>
     </div>
   )

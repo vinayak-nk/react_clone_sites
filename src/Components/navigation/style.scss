@@ -1,0 +1,75 @@
+@import '../../App.scss';
+
+@mixin links {
+  color: #fff;
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+@mixin button {
+  padding: .5rem 1rem;
+  background: #FF4820;
+  border-radius: 5px;
+  color: #fff;
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem 6rem;
+  &-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &_logo {
+      margin-right: 2rem;
+      > img {
+        width: 62px;
+        height: 16px;
+      }
+    }
+  }
+  &-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    >p {
+      @include links();
+    }
+    >button {
+      @include button();
+    }
+  }
+
+  &-links {
+    &__container {
+      display: flex;
+      >p {
+        @include links();
+      }  
+    }
+  }
+
+  &-menu {
+    &__container {
+      >p {
+        @include links();
+      }  
+    }
+  }
+}
