@@ -7,7 +7,6 @@
   font-size: 18px;
   line-height: 25px;
   text-transform: capitalize;
-  margin: 0 1rem;
   cursor: pointer;
 }
 
@@ -31,11 +30,13 @@
   align-items: center;
 
   padding: 2rem 6rem;
+
   &-links {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
     &_logo {
       margin-right: 2rem;
       > img {
@@ -44,12 +45,15 @@
       }
     }
   }
+
   &-sign {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
     >p {
       @include links();
+      margin: 0 1rem;
     }
     >button {
       @include button();
@@ -59,8 +63,10 @@
   &-links {
     &__container {
       display: flex;
+      flex: auto;
       >p {
         @include links();
+        margin: 0 1rem;
       }  
     }
   }
@@ -70,6 +76,91 @@
       >p {
         @include links();
       }  
+    }
+  }
+}
+
+.navbar-menu {
+  margin-left: 1rem;
+  display: none;
+  position: relative;
+  >svg {
+    cursor: pointer;
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    
+    background: $color-footer;
+    text-align: end;
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
+
+    >p {
+      @include links();
+      margin: 1rem 0;
+    }
+    >button {
+      @include button();
+    }
+
+    &-links {
+      @include links();
+      >p {
+        margin: 1rem 0;
+      }
+      &-sign {
+        display: none;
+        >p {
+          @include links();
+          margin-bottom: .5rem;
+        }
+        >button {
+          @include button();
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .navbar-links__container {
+    display: none;
+  }
+  .navbar-menu {
+    display: flex;
+  }
+  .navbar-links_logo {
+    flex: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar {
+    padding: 2rem 4rem;
+  }
+  .navbar-sign {
+    display: none;
+  }
+  .navbar-menu__container {
+    top: 20px;
+    &-links-sign {
+      display: block;
     }
   }
 }
